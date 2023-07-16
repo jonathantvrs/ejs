@@ -2,7 +2,7 @@
 let output = '';
 for (let line = 0; line < 8; line++) {
   for (let column = 0; column < 8; column++) {
-  	if ((line + column) % 2 == 0) {
+    if ((line + column) % 2 == 0) {
       output += ' ';
     } else {
       output += '#';
