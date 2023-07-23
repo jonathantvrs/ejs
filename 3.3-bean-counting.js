@@ -2,8 +2,7 @@
 function countBs(word) {
   let counter = 0;
   for (let i = 0; i < word.length; i++) {
-    let char = word[i];
-    if (char === "B") counter++; 
+    if (word[i] === "B") counter++; 
   }
 
   return counter;
