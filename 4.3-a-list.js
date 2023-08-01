@@ -19,6 +19,14 @@ function listToArray(list) {
 }
 
 function nth(list, index) {
+  for (let node = list; node || index == 0; node = node.rest) {
+    if (index == 0) return node.value;
+    index--;
+  }
+  return undefined;
+}
+
+function nth(list, index) {
   if (!list) return undefined;
   else if (index == 0) return list.value;
   else return nth(list.rest, n - 1);
