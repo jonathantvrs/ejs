@@ -1,11 +1,6 @@
 // First way
-function flatten(arrays) {
-  return arrays.reduce((acc, actual, index, array) => {
-    return acc.concat(array[index]);
-  }, [])
-}
+arrays.reduce((flat, _, index, array) => flat.concat(array[index]), []);
+arrays.reduce((flat, unused, index, array) => flat.concat(array[index]), []);
 
 // Second way
-function flatten(arrays) {
-  return arrays.reduce((flat, current) => flat.concat(current), []);
-}
+arrays.reduce((flat, current) => flat.concat(current), []);
