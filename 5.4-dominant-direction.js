@@ -26,11 +26,11 @@ function countBy(items, groupName) {
 // First way
 function dominantDirection(text) {
   return countBy(text, char => {
-    let script = characterScript(char.codePointAt());
+    let script = characterScript(char.codePointAt(0));
     return script ? script.direction : "none";
-  }).reduce((maxDirectionObj, currentDirectionObj) => 
-            currentDirectionObj.count > maxDirectionObj.count ?
-            currentDirectionObj : maxDirectionObj).name
+  })
+  .filter(({name}) => name != "none")
+  .reduce((a, b) => a.count > b.count ? a : b).name;
 }
 
 // Second way
